@@ -3,13 +3,15 @@
 ### Description
 Implementation of DAO. Built using OpenZeppelin Wizzard
 
+### Purpose
+Part of Advanced Foundry course from Cyfrin Updraft and as submodule in [appropriate repository](https://github.com/kuzminklk/cyfrin-updraft)  
+
 ### Technologies
 OpenZeppelin
 
 
 ### Status
-Finished, tested locally, but not deployed to testnet  
-Issue with deployment  
+Finished, tested locally, but not deployed to testnet due issue with deployment  
 
 ### Development Path
 1. Finished course materials
@@ -27,7 +29,7 @@ Install Foundry dependences:
 
 ### Usage
 Basic Foundry commands: ```forge build```, ```forge test```  
-Other appropriate commands in ```./commands.bash```  
+Other appropriate commands in ```./commands.sh```   
 
 ### Deployments
 Don't do deployment, script doesn't works correctly (meet contract size limit issue and mess with “msg.sender” and “tx.origin”)  
