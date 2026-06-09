@@ -11,7 +11,7 @@ OpenZeppelin
 
 
 ### Status
-Finished, tested locally, but not deployed to testnet due issue with deployment  
+Finished, tested locally, but didn't deployed to testnet due issue with deployment  
 
 ### Development Path
 1. Finished course materials
@@ -32,4 +32,4 @@ Basic Foundry commands: ```forge build```, ```forge test```
 Other appropriate commands in ```./commands.sh```   
 
 ### Deployments
-Don't do deployment, script doesn't works correctly (meet contract size limit issue and mess with “msg.sender” and “tx.origin”)  
+Didn't deployed for now. Script doesn't works correctly (meet contract size limit issue and mess with “msg.sender” and “tx.origin”)  
