@@ -1,35 +1,47 @@
-
+## About
 
 ### Description
-Implementation of DAO. Built using OpenZeppelin Wizzard
+
+Implementation of DAO. Built using OpenZeppelin Wizard
 
 ### Purpose
-Part of Advanced Foundry course from Cyfrin Updraft and as submodule in [appropriate repository](https://github.com/kuzminklk/cyfrin-updraft)  
+
+Part of Advanced Foundry course from Cyfrin Updraft and as submodule in [appropriate repository](https://github.com/kuzminklk/cyfrin-updraft)
 
 ### Technologies
-OpenZeppelin
 
+Programming language: Solidity  
+Environment: Foundry  
+Network: Ethereum  
+Smart-contracts: OpenZeppelin
+
+## State
 
 ### Status
-Finished, tested locally, but didn't deployed to testnet due issue with deployment  
 
-### Development Path
-1. Finished course materials
-2. Tried to create deploy script and deploy to testnet, met an issue (contract size limit and mess with “msg.sender” and “tx.origin”)
+Finished, tested locally, but didn't deployed to testnet due issue with deployment
+
+### Path
+
+1. Finish course materials
+2. Try to create deploy script and deploy to testnet, meet an issue (contract size limit and mess with “msg.sender” and “tx.origin”)
 
 ### To-dos
+
 - Solve deploy problems in Foundry
 - Rebuild project in Hardhat with more clear scripts
 
+### Deployments
+
+Didn't deploy for now. Script doesn't work correctly (meet contract size limit issue and mess with “msg.sender” and “tx.origin”)
+
+## Usage
 
 ### Set Up
-Install Foundry dependences:  
-```forge install foundry-rs/forge-std@v1.16.1 --no-git```   
-```forge install openzeppelin/openzeppelin-contracts@v5.6.1 --no-git```  
 
-### Usage
-Basic Foundry commands: ```forge build```, ```forge test```  
-Other appropriate commands in ```./commands.sh```   
+Install Foundry dependences: `forge install`
 
-### Deployments
-Didn't deployed for now. Script doesn't works correctly (meet contract size limit issue and mess with “msg.sender” and “tx.origin”)  
+### Use
+
+Basic Foundry commands: `forge build`, `forge test`  
+Other appropriate commands in `./commands.sh`
