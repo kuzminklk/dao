@@ -10,16 +10,18 @@ Part of Advanced Foundry course from Cyfrin Updraft and as submodule in [appropr
 
 ### Technologies
 
+Development: Visual Studio Code  
 Programming language: Solidity  
 Environment: Foundry  
 Network: Ethereum  
-Smart-contracts: OpenZeppelin
+Smart-contracts: OpenZeppelin  
+Formatting: “.editorconfig”, “.vscode/…”, Foundry, Prettier  
 
 ## State
 
 ### Status
 
-Finished, tested locally, but didn't deployed to testnet due issue with deployment
+Finished, tested locally, but didn't deploy to testnet due issue with deployment
 
 ### Path
 
@@ -39,7 +41,7 @@ Didn't deploy for now. Script doesn't work correctly (meet contract size limit i
 
 ### Set Up
 
-Install Foundry dependences: `forge install`
+Install Foundry dependencies: `forge install`
 
 ### Use
 

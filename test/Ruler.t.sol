@@ -1,27 +1,24 @@
-
-
 //SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.26;
 
-import { Test, console } from "forge-std/Test.sol";
+import {Test, console} from "forge-std/Test.sol";
 
-import { Value } from "../src/Value.sol";
-import { GovernanceToken } from "../src/GovernanceToken.sol";
-import { Ruler } from "../src/Ruler.sol";
-import { TimeLock } from "../src/TimeLock.sol";
-import { Deploy } from "../script/Deploy.s.sol";
-
+import {Value} from "../src/Value.sol";
+import {GovernanceToken} from "../src/GovernanceToken.sol";
+import {Ruler} from "../src/Ruler.sol";
+import {TimeLock} from "../src/TimeLock.sol";
+import {Deploy} from "../script/Deploy.s.sol";
 
 /**
-	* @notice Test governor contract aka “Ruler” and general DAO functionality
-	*/
+ *	@notice Test governor contract aka “Ruler” and general DAO functionality
+ */
 contract RulerTest is Test {
-	uint256 constant public VALUE_TO_STORE = 100;
-	uint256 constant public AMOUNT_OF_ETHERS_TO_SEND = 0;
-	uint256 constant public TIMELOCK_DELAY = 50400; // In blocks, equal 1 week with 15 seconds block time
-	uint256 constant public VOTING_DELAY = 7200; // In blocks, equal 1 day with 15 seconds block time
-	uint256 constant public VOTING_PERIOD = 50400; // In blocks, equal 1 week with 15 seconds block time
+	uint256 public constant VALUE_TO_STORE = 100;
+	uint256 public constant AMOUNT_OF_ETHERS_TO_SEND = 0;
+	uint256 public constant TIMELOCK_DELAY = 50400; // In blocks, equal 1 week with 15 seconds block time
+	uint256 public constant VOTING_DELAY = 7200; // In blocks, equal 1 day with 15 seconds block time
+	uint256 public constant VOTING_PERIOD = 50400; // In blocks, equal 1 week with 15 seconds block time
 
 	Value public valueContract;
 	GovernanceToken public governanceTokenContract;
@@ -44,12 +41,12 @@ contract RulerTest is Test {
 		deployer = new Deploy();
 
 		vm.startPrank(owner, owner);
-			(valueContract, governanceTokenContract, rulerContract, timeLockContract) = deployer.deploy(owner);
+		(valueContract, governanceTokenContract, rulerContract, timeLockContract) = deployer.deploy(owner);
 		vm.stopPrank();
 	}
 
 	/**
-	 * @notice Test that value can't be set outside
+	 *	@notice Test that value can't be set outside
 	 */
 	function testCantUpdateValueWithoutGovernance() public {
 		vm.expectRevert();
@@ -57,10 +54,9 @@ contract RulerTest is Test {
 	}
 
 	/**
-	 * @notice Test that value can be set from governance (“Ruler” contract)
+	 *	@notice Test that value can be set from governance (“Ruler” contract)
 	 */
 	function testCanUpdateValueWithGovernance() public {
-
 		// 1. Create porposal
 		string memory description = "Store 100 in the Value contract";
 		bytes memory encodedFunctionCall = abi.encodeWithSignature("setValue(uint256)", VALUE_TO_STORE);
@@ -79,7 +75,7 @@ contract RulerTest is Test {
 		string memory reason = "Because it's cool!";
 		uint8 vote = 1; // Equal “For” for approprate enum
 		vm.startPrank(owner);
-			rulerContract.castVoteWithReason(proposalIdentificator, vote, reason);
+		rulerContract.castVoteWithReason(proposalIdentificator, vote, reason);
 		vm.stopPrank();
 
 		vm.warp(block.timestamp + VOTING_PERIOD + 1);
